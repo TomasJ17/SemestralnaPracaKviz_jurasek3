@@ -22,4 +22,4 @@ Mobilná kvízová aplikácia vyvinutá v rámci semestrálnej práce.
 3. Klikni na `Run`.
 
 ## Autor
-Tomáš Jurásek
+Tomáš Jurašek
