@@ -14,7 +14,7 @@ Mobilná kvízová aplikácia vyvinutá v rámci semestrálnej práce.
 - Git & GitHub pre správu verzií
 
 ## Stav projektu
-- Aktuálne vo vývoji (branch: `develop`)
+- Aktuálne vo vývoji, vštko v mastrovi
 
 ## Spustenie projektu
 1. Otvor projekt v Android Studio.
