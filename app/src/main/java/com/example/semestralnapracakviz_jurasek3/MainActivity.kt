@@ -29,16 +29,18 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             val navController = rememberNavController()
-            NavHost(navController = navController, startDestination = "splash") {
-                composable("splash") { SplashScreen(navController) }
-                composable("home") { HomeScreen(navController) } // <- domovská obrazovka
-            }
             Surface(color = MaterialTheme.colorScheme.background) {
-                val navController = rememberNavController()
-
                 NavHost(navController = navController, startDestination = "splash") {
+                    //kratka uvodna obrazovka
                     composable("splash") { SplashScreen(navController) }
+                    //domovska obrazovka s menu a tlacidlami
                     composable("home") { HomeScreen(navController) }
+                    //zobrazuje otazky, odpovede a po skonceni ukaze result screen
+                    composable("quiz") { QuizScreen(navController) }
+                    //zobrazi vysledok jednej danej hry, pocet spravnych odpovedi
+                    composable("result") { ResultScreen(navController) }
+                    //zobrazenie obrazovky s najlepsimi skore predoslych hier
+                    composable("score") { ScoreboardScreen(navController) }
                 }
             }
         }

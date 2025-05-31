@@ -32,7 +32,7 @@ fun SplashScreen(navController: NavController) {
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            // Logo alebo obrázok
+            // Zobrazenie loga (logo.png)
             Image(
                 painter = painterResource(id = R.drawable.logo),
                 contentDescription = "Logo Kvizio",

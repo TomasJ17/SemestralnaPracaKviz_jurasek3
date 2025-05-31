@@ -57,7 +57,7 @@ fun HomeScreen(navController: NavHostController) {
 
             // Tlačidlo Hrať
             Button(
-                onClick = { /* TODO: Prechod na QuizScreen */ },
+                onClick = { navController.navigate("quiz") },
                 colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFFF5722)),
                 modifier = Modifier
                     .fillMaxWidth(0.6f)
@@ -72,7 +72,7 @@ fun HomeScreen(navController: NavHostController) {
 
             // Tlačidlo Skóre
             Button(
-                onClick = { /* TODO: Prechod na ScoreScreen */ },
+                onClick = { navController.navigate("score") },
                 colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFFF5722)),
                 modifier = Modifier
                     .fillMaxWidth(0.6f)
