@@ -1,12 +1,8 @@
 package com.example.semestralnapracakviz_jurasek3
 
-// Jetpack Compose imports
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
-import androidx.compose.runtime.Composable
 
-// Navigation imports
-import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
@@ -15,13 +11,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.example.semestralnapracakviz_jurasek3.ui.theme.SemestralnaPracaKviz_jurasek3Theme
+
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,9 +28,12 @@ class MainActivity : ComponentActivity() {
                     //zobrazuje otazky, odpovede a po skonceni ukaze result screen
                     composable("quiz") { QuizScreen(navController) }
                     //zobrazi vysledok jednej danej hry, pocet spravnych odpovedi
-                    composable("result") { ResultScreen(navController) }
+                    composable("result/{score}") { backStackEntry ->
+                        val score = backStackEntry.arguments?.getString("score")?.toIntOrNull() ?: 0
+                        ResultScreen(navController, score) }
                     //zobrazenie obrazovky s najlepsimi skore predoslych hier
-                    composable("score") { ScoreboardScreen(navController) }
+                    composable("score") { ScoreBoardScreen(navController) }
+
                 }
             }
         }

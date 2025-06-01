@@ -20,6 +20,7 @@ fun QuizScreen(navController: NavHostController) {
     var selectedAnswerIndex by remember { mutableStateOf<Int?>(null) }
     var showCorrect by remember { mutableStateOf(false) }
     var shouldGoNext by remember { mutableStateOf(false) }
+    var correctAnswers by remember { mutableStateOf(0) }
 
     // Otázky a odpovede (bude sa neskôr načítať zo súboru)
     val questions = listOf(
@@ -39,14 +40,14 @@ fun QuizScreen(navController: NavHostController) {
         // Odložený prechod na výsledkovú obrazovku
         LaunchedEffect(true) {
             delay(1000)
-            navController.navigate("result")
+            navController.navigate("result/$correctAnswers")
         }
         return
     }
 
     val question = questions[currentIndex]
 
-    Surface(modifier = Modifier.fillMaxSize()) {
+    Surface(modifier = Modifier.fillMaxSize(), color = Color(0xFFAEA9B4)) {
         Column(
             modifier = Modifier
                 .padding(16.dp)
@@ -54,6 +55,7 @@ fun QuizScreen(navController: NavHostController) {
             verticalArrangement = Arrangement.Top,
             horizontalAlignment = Alignment.Start
         ) {
+            Spacer(modifier = Modifier.height(32.dp))
             Text(
                 text = "Otázka ${currentIndex + 1}/${questions.size}",
                 style = MaterialTheme.typography.titleMedium
@@ -73,8 +75,8 @@ fun QuizScreen(navController: NavHostController) {
             question.answers.forEachIndexed { index, answer ->
                 val backgroundColor = when {
                     selectedAnswerIndex == null -> Color.LightGray
-                    index == question.correctIndex && showCorrect -> Color(0xFF81C784) // zelená
-                    index == selectedAnswerIndex -> Color(0xFFE57373) // červená
+                    index == question.correctIndex && showCorrect -> Color(0xFF227E43) // zelená
+                    index == selectedAnswerIndex -> Color(0xFFE43333) // červená
                     else -> Color.LightGray
                 }
 
@@ -87,6 +89,9 @@ fun QuizScreen(navController: NavHostController) {
                             selectedAnswerIndex = index
                             showCorrect = true
                             shouldGoNext = true
+                            if (index == question.correctIndex){
+                                correctAnswers++;
+                            }
                         }
                         .padding(16.dp)
                 ) {

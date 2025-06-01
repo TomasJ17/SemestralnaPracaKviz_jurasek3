@@ -19,7 +19,7 @@ import androidx.navigation.NavHostController
 fun HomeScreen(navController: NavHostController) {
     Surface(
         modifier = Modifier.fillMaxSize(),
-        color = Color(0xFFBDBDBD) // svetlo šedá
+        color = Color(0xFFAEA9B4)
     ) {
         Column(
             modifier = Modifier
