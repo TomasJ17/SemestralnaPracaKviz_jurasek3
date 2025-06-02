@@ -1,0 +1,212 @@
+[{"_comment": "zdroj otazok openSource"},
+  {
+    "text" : "Ktoré mesto je hlavné mesto Slovenska?",
+    "answers" : ["Košice","Bratislava","Prešov","Nitra"],
+    "correctIndex" : 1
+  },
+  {
+    "text" : "Ktorý jazyk je primárny pre Android vývoj?",
+    "answers" : ["Java","Swift","Kotlin","Python"],
+    "correctIndex" : 2
+  },
+  {
+    "text" : "Tri z týchto živočíchov hibernujú. Ktoré z nich to nerobí?",
+    "answers" : ["Myš","Leňochod","Žaba","Had"],
+    "correctIndex" : 1
+  },
+  {
+    "text" : "Všetky tieto zvieratá sú všežravé okrem jedného.",
+    "answers" : ["líška","myš","vačica","slimák"],
+    "correctIndex" : 3
+  },
+  {
+    "text" : "Tri z týchto latinských názvov sú mená medveďov. Ktorý z nich je nesprávny?",
+    "answers" : ["Melursus ursinus","Helarctos malayanus","Ursus minimus","Felis silvestris catus"],
+    "correctIndex" : 3
+  },
+  {
+    "text" : "Toto sú typické austrálske zvieratá okrem jedného.",
+    "answers" : ["Vtákopysk","Pes Dingo","Echidna","Leňochod"],
+    "correctIndex" : 3
+  },
+  {
+    "text": "Zástupcovia troch z týchto druhov produkujú vlastný jed. Ktorý druh je nespárny?",
+    "answers": ["Jašterice", "Škorpióny", "Žaby", "Komáre"],
+    "correctIndex": 3
+  },
+  {
+    "text": "Ktorá z týchto možností je pravdivá o spánku zebier?",
+    "answers": ["Všetky z nich", "Spia v stoji.", "Zaspávali by každých 5 až 6 hodín.", "Potrebujú spať viac ako 12 hodín denne."],
+    "correctIndex": 1
+  },
+  {
+    "text": "Istý farmár mal 12 oviec a 3 kravy. Všetky zvieratá okrem 9 oviec uhynuli. Koľko zvierat mu zostalo na farme?",
+    "answers": ["5 kráv a 1 ovca", "9 oviec", "2 kravy", "žiadne"],
+    "correctIndex": 1
+  },
+  {
+    "text": "Nehovorím, nepočujem, ale vždy hovorím pravdu.",
+    "answers": ["Hodinky", "Ryba", "Zrkadlo", "Stará babička"],
+    "correctIndex": 2
+  },
+  {
+    "text": "Môže sa rímskokatolík z Kalifornie oženiť so sestrou vdovy, ktorá pochádza z Texasu?",
+    "answers": ["Áno", "Nie"],
+    "correctIndex": 1
+  },
+  {
+    "text": "Ako pokračuje toto príslovie: Škrípajúce koleso dostane...",
+    "answers": ["hrdzu", "odstránenie", "Rozbitie", "Mazivo"],
+    "correctIndex": 3
+  },
+  {
+    "text": "Jednou z prvých filmových úloh Johnnyho Deppa bola úloha aligátora Lernera v ktorom filme z roku 1986?",
+    "answers": ["Farba peňazí", "Čata", "Top Gun", "Mimozemšťania"],
+    "correctIndex": 1
+  },
+  {
+    "text": "Ktorý z týchto filmov Tima Burtona s Johnnym Deppom v hlavnej úlohe vznikol ako prvý?",
+    "answers": ["Charlie a továreň na čokoládu", "Ed Wood", "Ospalá diera", "Nožnicovoruký Edward"],
+    "correctIndex": 3
+  },
+  {
+    "text": "Tento škótsky spisovateľ, ktorého stvárnil Johnny Depp vo filme Finding Neverland, vytvoril fiktívnu postavu Petra Pana.",
+    "answers": ["John Dunne", "George Eliot", "Joseph Grimm", "James Barrie"],
+    "correctIndex": 3
+  },
+  {
+    "text": "Vo filme Blow z roku 2001 je úloha Johnyho Deppa založená na skutočnom príbehu jeho postavy.",
+    "answers": ["Pravda", "Nepravda"],
+    "correctIndex": 0
+  },
+  {
+    "text": "Aké je krstné meno postavy Johnnyho Deppa vo filme Tajomné okno z roku 2004?",
+    "answers": ["Tom", "Alan", "Lou", "Mort"],
+    "correctIndex": 3
+  },
+  {
+    "text": "Tento nápoj obsahuje kofeín.",
+    "answers": ["Minerálna voda", "Pomarančový džús", "Káva", "Pivo"],
+    "correctIndex": 2
+  },
+  {
+    "text": "Dokončite príslovie:\nBásnici sa rodia, ________.",
+    "answers": ["...nie sú stvorení.", "...ale môžu byť aj stvorení.", "...ale to nie je isté.", "..., nech žijú básnici!"],
+    "correctIndex": 3
+  },
+  {
+    "text": "Ak má televízny program hodnotenie G, potom je to pravda.",
+    "answers": ["Obsahuje mierne násilie.", "Obsahuje mierne sexuálne situácie.", "Je vhodný pre všetkých divákov.", "Je vhodný pre malé deti."],
+    "correctIndex": 2
+  },
+  {
+    "text": "Teóriu relativity zaviedol do fyziky tento muž.",
+    "answers": ["Galileo Galilei", "Albert Einstein", "Archimedes", "Isaac Newton"],
+    "correctIndex": 1
+  },
+  {
+    "text": "Symbol chemického prvku železo je tento.",
+    "answers": ["I", "Fe", "Zn", "Br"],
+    "correctIndex": 1
+  },
+  {
+    "text": "Aké je hlavné mesto Afganistanu?",
+    "answers": ["Tirana", "Kábul", "Dušanbe", "Taškent"],
+    "correctIndex": 1
+  },
+  {
+    "text": "Aké je hlavné mesto Austrálie?",
+    "answers": ["Canberra", "Sydney", "Melbourne", "Ottawa"],
+    "correctIndex": 0
+  },
+  {
+    "text": "Aké je hlavné mesto Belgicka?",
+    "answers": ["Amsterdam", "Luxembursko", "Brusel", "Štokholm"],
+    "correctIndex": 2
+  },
+  {
+    "text": "Aké je hlavné mesto Grécka?",
+    "answers": ["Ankara", "Atény", "Sofia", "Solún"],
+    "correctIndex": 1
+  },
+  {
+    "text": "Aké je hlavné mesto Talianska?",
+    "answers": ["Benátky", "Rím", "Neapol", "Miláno"],
+    "correctIndex": 1
+  },
+  {
+    "text": "V ktorom štáte USA sa nachádza činná sopka Mount Rainier?",
+    "answers": ["Michigan", "Ohio", "Washington", "New York"],
+    "correctIndex": 2
+  },
+  {
+    "text": "V roku 1990 sa v Alpách našlo toto 5000 rokov staré telo. Vedci objavili na jeho nohe niekoľko tetovaní, ktoré naznačujú, že akupunktúra sa používala už v dobe medeno-kamennej.",
+    "answers": ["Veľká noha", "Snežný muž", "Nessie", "Oetzi"],
+    "correctIndex": 3
+  },
+  {
+    "text": "Po neúspešných rokovaniach o ťažbe ropy a splácaní dlhu Irak obsadil Kuvajt. V januári 1991 začali USA v rámci tejto operácie letecký útok na vojenské ciele v Iraku a Kuvajte.",
+    "answers": ["Matador", "BOLERO", "Odhodlaná sila", "Púštna búrka"],
+    "correctIndex": 3
+  },
+  {
+    "text": "Je to proces vytvárania identických kópií segmentu DNA nepohlavným spôsobom. V roku 1996 bol vytvorený prvý úspešný exemplár živočícha. Zviera sa volalo Dolly. Dolly neskôr zomrela, ale Richard Seed oznámil, že to chce vyskúšať na ľuďoch.",
+    "answers": ["Transplantácia orgánov", "Klonovanie", "Bezkrvná chirurgia", "Laserová chirurgia"],
+    "correctIndex": 1
+  },
+  {
+    "text": "Tento druh hudby sa stal v 90. rokoch 20. storočia v Európe a Amerike veľmi populárny. Je to melodická, voľná forma kombinácie techna a housu, ktorá má hypnotické vlastnosti. Prvou výraznou skladbou tohto druhu bola Age Of Love, vydaná v roku 1990.",
+    "answers": ["Elektronický", "Trance", "Techno", "Dance"],
+    "correctIndex": 1
+  },
+  {
+    "text": "Kontroverzný text tejto piesne od The Rolling Stones obsahuje: Its Down to me, the way she talks when shes spoken to",
+    "answers": ["Hearth Of Stone", "Under My Thumb", "Play With Fire", "Its All Over Now"],
+    "correctIndex": 1
+  },
+  {
+    "text": "Mick Jagger v tejto piesni spieva Baby, baby, theres fever in the funk house now.",
+    "answers": ["Tumbling Dice", "Gimme Shelter", "Street Fighting Man", "Jumpin Jack Flash"],
+    "correctIndex": 0
+  },
+  {
+    "text": "Lose Your Dreams and you will lose your mind sú slová tohto hitu skupiny The Rolling Stones z roku 1967.",
+    "answers": ["As Tears Go By", "(I Cant Get No) Satisfaction", "Shes A Rainbow", "Ruby Tuesday"],
+    "correctIndex": 3
+  },
+  {
+    "text": "Časť tejto piesne od The Rolling Stones znie: Rozhodli sme sa, že si dáme limonádu - moju obľúbenú príchuť, čerešňovo červenú?",
+    "answers": ["Jumpin Jack Flash", "Hot Stuff", "Mothers Little Helper", "You Cant Always Get What You Want"],
+    "correctIndex": 3
+  },
+  {
+    "text": "Text tejto piesne od skupiny Rolling Stones obsahuje frázu Rape, murder!",
+    "answers": ["Sympathy for the Devil", "Street Fighting Man", "Harlem Shuffle", "Gimme Shelter"],
+    "correctIndex": 3
+  },
+  {
+    "text": "V ktorom fiktívnom meste sa odohráva seriál Futurama?",
+    "answers": ["Nové Chicago", "Nový New York", "Nové San Francisco", "Žiadne z týchto miest"],
+    "correctIndex": 1
+  },
+  {
+    "text": "Aký je najnižší druh v hierarchii Covenantov v sérii Halo?",
+    "answers": ["Dron", "Brute", "Elita", "Grunt"],
+    "correctIndex": 3
+  },
+  {
+    "text": "V sérii hier Legend of Zelda nenosil Link tuniku akej farby?",
+    "answers": ["žltá", "modrá", "červená", "zelená"],
+    "correctIndex": 0
+  },
+  {
+    "text": "Ako sa volá robot v hre The Sims 2, ktorý nosí jedlo so sebou?",
+    "answers": ["HungryBot", "MunchieBot", "Bot", "FoodBot"],
+    "correctIndex": 1
+  },
+  {
+    "text": "Kto alebo čo premenilo Wariove poklady na príšery v hre Wario World?",
+    "answers": ["Kemmy Koopa", "Lemmy Koopa", "Čierny klenot", "Bowser"],
+    "correctIndex": 2
+  }
+]

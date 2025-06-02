@@ -13,6 +13,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 
 @Composable
@@ -24,48 +25,59 @@ fun HomeScreen(navController: NavHostController) {
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(16.dp),
-            verticalArrangement = Arrangement.Top,
-            horizontalAlignment = Alignment.CenterHorizontally
+               // .padding(16.dp),
+
         ) {
+            Spacer(Modifier.height(48.dp))
             // Horný oranžový box s názvom
             Box(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .height(80.dp)
+                    .height(160.dp)
                     .background(Color(0xFFFF5722)), // oranžová
                 contentAlignment = Alignment.Center
             ) {
                 Text(
                     text = "Kvizio",
                     color = Color.White,
-                    style = MaterialTheme.typography.headlineLarge
+                    style = MaterialTheme.typography.headlineLarge,
+                    fontSize = 64.sp
                 )
             }
 
-            Spacer(modifier = Modifier.height(40.dp))
-
             // Tu zobrazíme logo.png
+            Column(
+                modifier = Modifier
+                    .fillMaxSize(),
+                    //.padding(horizontal = 16.dp),
+                verticalArrangement = Arrangement.Center,
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
             Image(
                 painter = painterResource(id = R.drawable.logo),
                 contentDescription = "Logo Kvizio",
                 modifier = Modifier
-                    .size(150.dp)
+                    .size(300.dp)
             )
 
             Spacer(modifier = Modifier.height(40.dp))
 
             // Tlačidlo Hrať
             Button(
-                onClick = { navController.navigate("quiz") },
+                onClick = { navController.navigate("difficulty") },
                 colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFFF5722)),
                 modifier = Modifier
                     .fillMaxWidth(0.6f)
-                    .height(60.dp)
+                    .height(100.dp)
             ) {
-                Icon(Icons.Default.PlayArrow, contentDescription = "Hrať", tint = Color.White)
+                Icon(Icons.Default.PlayArrow, contentDescription = "Hrať",
+                    tint = Color.White,
+                    modifier = Modifier.size(36.dp)
+                    )
                 Spacer(modifier = Modifier.width(8.dp))
-                Text("Hrať", color = Color.White)
+                Text("Hrať", color = Color.White,
+                        fontSize = 22.sp
+                    )
             }
 
             Spacer(modifier = Modifier.height(20.dp))
@@ -76,12 +88,18 @@ fun HomeScreen(navController: NavHostController) {
                 colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFFF5722)),
                 modifier = Modifier
                     .fillMaxWidth(0.6f)
-                    .height(60.dp)
+                    .height(100.dp)
             ) {
-                Icon(Icons.Default.List, contentDescription = "Skóre", tint = Color.White)
+                Icon(Icons.Default.List, contentDescription = "Skóre",
+                    tint = Color.White,
+                    modifier = Modifier.size(36.dp)
+                    )
                 Spacer(modifier = Modifier.width(8.dp))
-                Text("Skóre", color = Color.White)
+                Text("Skóre", color = Color.White,
+                        fontSize = 22.sp
+                    )
             }
         }
+    }
     }
 }

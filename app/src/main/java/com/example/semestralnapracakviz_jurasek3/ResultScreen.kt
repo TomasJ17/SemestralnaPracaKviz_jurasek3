@@ -24,12 +24,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 
 @Composable
-fun ResultScreen(navController: NavController, score: Int){
-    //vzdy budem vyberat 10 otazok zo suboru
-    val total = 10;
+fun ResultScreen(navController: NavController, score: Int, countOfQuestions: Int){
+    //pocet otazok podla obtiaznosti
+    val total = countOfQuestions;
     Surface(modifier = Modifier.fillMaxSize(), color = Color(0xFFAEA9B4)) {
         Column (
             modifier = Modifier
@@ -53,11 +54,14 @@ fun ResultScreen(navController: NavController, score: Int){
                 colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFFF5722)),
                 modifier = Modifier
                     .fillMaxWidth(0.6f)
-                    .height(60.dp)
+                    .height(100.dp)
             ) {
                 Icon(Icons.Default.PlayArrow, contentDescription = "Hrať", tint = Color.White)
                 Spacer(modifier = Modifier.width(8.dp))
-                Text("Hrať znovu", color = Color.White)
+                Text("Hrať znovu",
+                    color = Color.White,
+                    fontSize = 22.sp
+                    )
             }
 
             Spacer(modifier = Modifier.height(20.dp))
@@ -67,11 +71,13 @@ fun ResultScreen(navController: NavController, score: Int){
                 colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFFF5722)),
                 modifier = Modifier
                     .fillMaxWidth(0.6f)
-                    .height(60.dp)
+                    .height(100.dp)
             ) {
                 Icon(Icons.Default.Menu, contentDescription = "Skore", tint = Color.White)
                 Spacer(modifier = Modifier.width(8.dp))
-                Text("Zobraziť skóre", color = Color.White)
+                Text("Zobraziť skóre",
+                    color = Color.White,
+                    fontSize = 20.sp)
             }
 
 
@@ -82,15 +88,16 @@ fun ResultScreen(navController: NavController, score: Int){
                 colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFFF5722)),
                 modifier = Modifier
                     .fillMaxWidth(0.6f)
-                    .height(60.dp)
+                    .height(100.dp)
             ) {
                 Icon(Icons.Default.Home, contentDescription = "Domov", tint = Color.White)
                 Spacer(modifier = Modifier.width(8.dp))
-                Text("Domov", color = Color.White)
+                Text("Domov",
+                    color = Color.White,
+                    fontSize = 22.sp)
             }
 
             Spacer(modifier = Modifier.height(20.dp))
         }
-
     }
 }
