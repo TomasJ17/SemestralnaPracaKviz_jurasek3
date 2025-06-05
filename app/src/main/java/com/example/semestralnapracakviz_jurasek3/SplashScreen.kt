@@ -9,6 +9,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
@@ -35,13 +36,14 @@ fun SplashScreen(navController: NavController) {
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Box(){
-                Text("Vitajte",
+                Text(
+                    stringResource(R.string.welcome),
                     fontSize = 96.sp)
             }
             // Zobrazenie loga (logo.png)
             Image(
                 painter = painterResource(id = R.drawable.logo),
-                contentDescription = "Logo Kvizio",
+                contentDescription = stringResource(R.string.logo_desc),
                 modifier = Modifier.size(150.dp)
             )
 
@@ -49,7 +51,7 @@ fun SplashScreen(navController: NavController) {
 
             // Názov aplikácie
             androidx.compose.material3.Text(
-                text = "Kvizio",
+                text = stringResource(R.string.app_name),
                 style = MaterialTheme.typography.headlineLarge,
                 color = MaterialTheme.colorScheme.onPrimary
             )

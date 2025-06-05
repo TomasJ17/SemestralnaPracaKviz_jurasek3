@@ -1,3 +1,21 @@
 <resources>
-    <string name="app_name">SemestralnaPracaKviz_jurasek3</string>
+    <string name="app_name">Kvizio</string>
+    <string name="welcome">Vitajte</string>
+    <string name="question">Otázka %1$d/%2$d</string>
+    <string name="play_again">Hrať znovu</string>
+    <string name="view_score">Zobraziť skóre</string>
+    <string name="home">Domov</string>
+    <string name="result">Výsledok</string>
+    <string name="correct_answers">Správne odpovede: %1$d / %2$d</string>
+    <string name="select_difficulty">Vyber si obtiažnosť</string>
+    <string name="easy">Ľahká\n (5 otázok)</string>
+    <string name="medium">Stredná\n (10 otázok)</string>
+    <string name="hard">Ťažká\n (15 otázok)</string>
+    <string name="your_top_scores">Tvoje TOP skóre</string>
+    <string name="trophy_first">Trofej 1.miesto</string>
+    <string name="trophy_second">Trofej 2.miesto</string>
+    <string name="trophy_third">Trofej 3.miesto</string>
+    <string name="play">Hrať</string>
+    <string name="score">Skóre</string>
+    <string name="logo_desc">Logo Kvizio</string>
 </resources>

@@ -5,14 +5,19 @@ import android.icu.text.SimpleDateFormat
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Home
+import androidx.compose.material.icons.filled.PlayArrow
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import kotlinx.coroutines.delay
 import java.io.File
@@ -102,6 +107,33 @@ fun QuizScreen(navController: NavHostController, questionCount: Int) {
                     Text(text = answer)
                 }
             }
+
+            Spacer(modifier = Modifier.height(32.dp))
+            Column (
+                modifier = Modifier.fillMaxSize(),
+                verticalArrangement = Arrangement.Center,
+                horizontalAlignment = Alignment.CenterHorizontally ){
+                Button(
+                    onClick = { navController.navigate("home") },
+                    colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFFF5722)),
+                    modifier = Modifier
+                        .fillMaxWidth(0.6f)
+                        .height(100.dp)
+
+                ) {
+                    Icon(
+                        Icons.Default.Home, contentDescription = stringResource(R.string.home),
+                        tint = Color.White,
+                        modifier = Modifier.size(36.dp)
+                    )
+                    Spacer(modifier = Modifier.width(8.dp))
+                    Text(
+                        stringResource(R.string.home), color = Color.White,
+                        fontSize = 22.sp
+                    )
+                }
+            }
+
 
 // efekt musí byť mimo kliknutia:
             if (shouldGoNext) {

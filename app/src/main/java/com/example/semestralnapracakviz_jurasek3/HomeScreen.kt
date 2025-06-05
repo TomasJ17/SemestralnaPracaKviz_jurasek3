@@ -12,6 +12,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
@@ -38,7 +39,7 @@ fun HomeScreen(navController: NavHostController) {
                 contentAlignment = Alignment.Center
             ) {
                 Text(
-                    text = "Kvizio",
+                    text = stringResource(R.string.app_name),
                     color = Color.White,
                     style = MaterialTheme.typography.headlineLarge,
                     fontSize = 64.sp
@@ -55,7 +56,7 @@ fun HomeScreen(navController: NavHostController) {
             ) {
             Image(
                 painter = painterResource(id = R.drawable.logo),
-                contentDescription = "Logo Kvizio",
+                contentDescription = stringResource(R.string.logo_desc),
                 modifier = Modifier
                     .size(300.dp)
             )
@@ -70,12 +71,13 @@ fun HomeScreen(navController: NavHostController) {
                     .fillMaxWidth(0.6f)
                     .height(100.dp)
             ) {
-                Icon(Icons.Default.PlayArrow, contentDescription = "Hrať",
+                Icon(Icons.Default.PlayArrow, contentDescription = stringResource(R.string.play),
                     tint = Color.White,
                     modifier = Modifier.size(36.dp)
                     )
                 Spacer(modifier = Modifier.width(8.dp))
-                Text("Hrať", color = Color.White,
+                Text(
+                    stringResource(R.string.play), color = Color.White,
                         fontSize = 22.sp
                     )
             }
@@ -90,12 +92,13 @@ fun HomeScreen(navController: NavHostController) {
                     .fillMaxWidth(0.6f)
                     .height(100.dp)
             ) {
-                Icon(Icons.Default.List, contentDescription = "Skóre",
+                Icon(Icons.Default.List, contentDescription = stringResource(R.string.score),
                     tint = Color.White,
                     modifier = Modifier.size(36.dp)
                     )
                 Spacer(modifier = Modifier.width(8.dp))
-                Text("Skóre", color = Color.White,
+                Text(
+                    stringResource(R.string.score), color = Color.White,
                         fontSize = 22.sp
                     )
             }

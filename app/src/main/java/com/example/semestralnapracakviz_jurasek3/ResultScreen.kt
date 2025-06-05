@@ -22,6 +22,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -39,13 +40,16 @@ fun ResultScreen(navController: NavController, score: Int, countOfQuestions: Int
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ){
-            Text("Výsledok",
+            Text(
+                stringResource(R.string.result),
                 style = MaterialTheme.typography.headlineLarge,
                 fontWeight = FontWeight.Bold,
                 color = Color.Black
             )
             Spacer(modifier = Modifier.height(24.dp))
-            Text("Správne odpovede: $score / $total", style = MaterialTheme.typography.titleLarge)
+            Text(
+                stringResource(R.string.correct_answers,score,total),
+                style = MaterialTheme.typography.titleLarge)
             Spacer(modifier = Modifier.height(40.dp))
 
 
@@ -56,9 +60,10 @@ fun ResultScreen(navController: NavController, score: Int, countOfQuestions: Int
                     .fillMaxWidth(0.6f)
                     .height(100.dp)
             ) {
-                Icon(Icons.Default.PlayArrow, contentDescription = "Hrať", tint = Color.White)
+                Icon(Icons.Default.PlayArrow, contentDescription = stringResource(R.string.play_again), tint = Color.White)
                 Spacer(modifier = Modifier.width(8.dp))
-                Text("Hrať znovu",
+                Text(
+                    stringResource(R.string.play_again),
                     color = Color.White,
                     fontSize = 22.sp
                     )
@@ -73,9 +78,10 @@ fun ResultScreen(navController: NavController, score: Int, countOfQuestions: Int
                     .fillMaxWidth(0.6f)
                     .height(100.dp)
             ) {
-                Icon(Icons.Default.Menu, contentDescription = "Skore", tint = Color.White)
+                Icon(Icons.Default.Menu, contentDescription = stringResource(R.string.score), tint = Color.White)
                 Spacer(modifier = Modifier.width(8.dp))
-                Text("Zobraziť skóre",
+                Text(
+                    stringResource(R.string.view_score),
                     color = Color.White,
                     fontSize = 20.sp)
             }
@@ -90,9 +96,11 @@ fun ResultScreen(navController: NavController, score: Int, countOfQuestions: Int
                     .fillMaxWidth(0.6f)
                     .height(100.dp)
             ) {
-                Icon(Icons.Default.Home, contentDescription = "Domov", tint = Color.White)
+                Icon(Icons.Default.Home, contentDescription = stringResource(R.string.home),
+                    tint = Color.White)
                 Spacer(modifier = Modifier.width(8.dp))
-                Text("Domov",
+                Text(
+                    stringResource(R.string.home),
                     color = Color.White,
                     fontSize = 22.sp)
             }

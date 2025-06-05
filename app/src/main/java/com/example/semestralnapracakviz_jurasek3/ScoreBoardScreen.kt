@@ -27,6 +27,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
@@ -47,10 +48,11 @@ fun ScoreBoardScreen(navController: NavController){
                 verticalArrangement = Arrangement.Top
         ){
             Spacer(modifier = Modifier.height(48.dp))
-            Text("Tvoje TOP skóre", style = MaterialTheme.typography.headlineLarge)
+            Text(
+                stringResource(R.string.your_top_scores),
+                style = MaterialTheme.typography.headlineLarge)
             Spacer(modifier = Modifier.height(120.dp))
-            // preto lebo dvojciferne cisla mi rozbili obrazovku
-            scores.take(9).forEachIndexed{//index + 1 aby slo cislovanie od 1 a nie od 0
+            scores.take(5).forEachIndexed{//index + 1 aby slo cislovanie od 1 a nie od 0
                 index, (score, date) ->
                 Row(
                     modifier = Modifier.fillMaxWidth()
@@ -61,7 +63,7 @@ fun ScoreBoardScreen(navController: NavController){
                     if (index == 0){
                         Icon(
                             imageVector = Icons.Default.Star,
-                            contentDescription = "Trofej 1.miesto",
+                            contentDescription = stringResource(R.string.trophy_first),
                             tint = Color(0xFFFFCC00),
                             modifier = Modifier.size(32.dp)
                                 .padding(end = 8.dp)
@@ -70,7 +72,7 @@ fun ScoreBoardScreen(navController: NavController){
                     if (index == 1){
                         Icon(
                             imageVector = Icons.Default.Star,
-                            contentDescription = "Trofej 2.miesto",
+                            contentDescription = stringResource(R.string.trophy_second),
                             tint = Color(0xFFDBDCDB),
                             modifier = Modifier.size(32.dp)
                                 .padding(end = 8.dp)
@@ -79,7 +81,7 @@ fun ScoreBoardScreen(navController: NavController){
                     if (index == 2){
                         Icon(
                             imageVector = Icons.Default.Star,
-                            contentDescription = "Trofej 3.miesto",
+                            contentDescription = stringResource(R.string.trophy_third),
                             tint = Color(0xFFAC781D),
                             modifier = Modifier.size(32.dp)
                                 .padding(end = 8.dp)
@@ -108,10 +110,12 @@ fun ScoreBoardScreen(navController: NavController){
                     .fillMaxWidth(0.6f)
                     .height(100.dp)
             ) {
-                Icon(Icons.Default.Home, contentDescription = "Domov", tint = Color.White)
+                Icon(Icons.Default.Home, contentDescription = stringResource(R.string.home),
+                    tint = Color.White)
                 Spacer(modifier = Modifier.width(8.dp))
-                Text("Domov", color = Color.White,
-                        fontSize = 22.sp
+                Text(stringResource(R.string.home),
+                    color = Color.White,
+                    fontSize = 22.sp
                     )
             }
 

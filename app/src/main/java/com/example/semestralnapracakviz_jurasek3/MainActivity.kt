@@ -38,7 +38,6 @@ class MainActivity : ComponentActivity() {
                     }
                     //zobrazenie obrazovky s najlepsimi skore predoslych hier
                     composable("score") { ScoreBoardScreen(navController) }
-
                 }
             }
         }

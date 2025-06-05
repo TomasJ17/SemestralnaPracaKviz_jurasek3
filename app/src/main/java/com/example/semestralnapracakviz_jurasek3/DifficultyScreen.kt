@@ -20,6 +20,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -34,7 +35,8 @@ fun DifficultyScreen(navController: NavController){
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Text("Vyber si obtiažnosť", style = MaterialTheme.typography.headlineSmall)
+        Text( stringResource(R.string.select_difficulty)
+            , style = MaterialTheme.typography.headlineSmall)
         Spacer(modifier = Modifier.height(32.dp))
 
         Button(onClick = {navController.navigate("quiz/5")},
@@ -43,7 +45,8 @@ fun DifficultyScreen(navController: NavController){
                 .fillMaxWidth(0.6f)
                 .height(100.dp)
             ) {
-            Text("Ľahká\n (5 otázok)",
+            Text(
+                stringResource(R.string.easy),
                 fontSize = 22.sp,
                 textAlign = TextAlign.Center
                 )
@@ -56,7 +59,8 @@ fun DifficultyScreen(navController: NavController){
                 .fillMaxWidth(0.6f)
                 .height(100.dp)
         ) {
-            Text("Stredná\n (10 otázok)",
+            Text(
+                stringResource(R.string.medium),
                 fontSize = 22.sp,
                 textAlign = TextAlign.Center
             )
@@ -69,7 +73,8 @@ fun DifficultyScreen(navController: NavController){
                 .fillMaxWidth(0.6f)
                 .height(100.dp)
             ) {
-            Text("Ťažká\n (15 otázok)",
+            Text(
+                stringResource(R.string.hard),
                 fontSize = 22.sp,
                 textAlign = TextAlign.Center
             )
@@ -83,9 +88,9 @@ fun DifficultyScreen(navController: NavController){
                 .fillMaxWidth(0.6f)
                 .height(100.dp)
         ) {
-            Icon(Icons.Default.Home, contentDescription = "Domov", tint = Color.White)
+            Icon(Icons.Default.Home, contentDescription = stringResource(R.string.home), tint = Color.White)
             Spacer(modifier = Modifier.width(8.dp))
-            Text("Domov", color = Color.White, fontSize = 22.sp)
+            Text(stringResource(R.string.home), color = Color.White, fontSize = 22.sp)
         }
 
         Spacer(modifier = Modifier.height(20.dp))
