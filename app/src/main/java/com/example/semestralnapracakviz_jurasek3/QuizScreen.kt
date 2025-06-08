@@ -93,7 +93,8 @@ fun QuizScreen(navController: NavHostController, questionCount: Int) {
     val question = questions[currentIndex]
 
     // kontrola či sa správne načítali odpovede danej otázky
-
+    // https://kotlinlang.org/docs/null-safety.html#safe-calls
+    // https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/is-null-or-empty.html
     if (question?.answers.isNullOrEmpty()) {
         Toast.makeText(context, "Chybná otázka, nemá žiadne odpovede alebo je null", Toast.LENGTH_SHORT).show()
         navController.navigate("home")
