@@ -93,8 +93,9 @@ fun QuizScreen(navController: NavHostController, questionCount: Int) {
     val question = questions[currentIndex]
 
     // kontrola či sa správne načítali odpovede danej otázky
-    if (question.answers.isEmpty()) {
-        Toast.makeText(context, "Chybná otázka, nemá žiadne odpovede", Toast.LENGTH_SHORT).show()
+
+    if (question?.answers.isNullOrEmpty()) {
+        Toast.makeText(context, "Chybná otázka, nemá žiadne odpovede alebo je null", Toast.LENGTH_SHORT).show()
         navController.navigate("home")
         return
     }
