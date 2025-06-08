@@ -15,6 +15,17 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import kotlinx.coroutines.delay
 
+/**
+* SplashScreen - úvodná(načítavacia) obrazovka aplikácie
+ *
+ * Zobrazí sa používateľovi na začiatku po spustení a privíta ho
+ * Po krátkej chvíli používateľa presmeruje na HomeScreen
+* */
+
+/**
+ * @param navController na prechod medzi obrazovkami
+ * */
+
 @Composable
 fun SplashScreen(navController: NavController) {
     LaunchedEffect(Unit) {
@@ -50,7 +61,7 @@ fun SplashScreen(navController: NavController) {
             Spacer(modifier = Modifier.height(24.dp))
 
             // Názov aplikácie
-            androidx.compose.material3.Text(
+            Text(
                 text = stringResource(R.string.app_name),
                 style = MaterialTheme.typography.headlineLarge,
                 color = MaterialTheme.colorScheme.onPrimary

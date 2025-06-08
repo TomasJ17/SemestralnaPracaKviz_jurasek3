@@ -1,6 +1,5 @@
 package com.example.semestralnapracakviz_jurasek3
 
-import android.annotation.SuppressLint
 import android.content.Context
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -32,13 +31,25 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import java.io.File
+import java.util.Locale
 
-@SuppressLint("DefaultLocale")
+/**
+ * ScoreBoardScreen - Zobrazovanie rebríčka TOP výsledkov v percentách spolu s dítumom a časom
+ *
+ * Zobrazí zoznam predchádzajúcich TOP výsledkov zoradených od najlepšieho, dáta sa načítavajú z lokálneho úložiska telefónu
+ * */
+
+/**
+ * @param navController na prechod medzi obrazovkami
+ * */
+
 @Composable
 fun ScoreBoardScreen(navController: NavController){
+    // Ziskanie kontextu aplikacie
     val context = LocalContext.current
+    // Nacitanie skore len raz pri vykreslenie, zabezpecene pomocou remember
     val scores = remember { readScores(context) }
-
+    // Hlavná obrazovka
     Surface(modifier = Modifier.fillMaxSize(),
         color = Color(0xFFAEA9B4)) {
         Column (
@@ -48,11 +59,13 @@ fun ScoreBoardScreen(navController: NavController){
                 verticalArrangement = Arrangement.Top
         ){
             Spacer(modifier = Modifier.height(48.dp))
+            // Nadpis Tvoje TOP skóre
             Text(
                 stringResource(R.string.your_top_scores),
                 style = MaterialTheme.typography.headlineLarge)
             Spacer(modifier = Modifier.height(120.dp))
-            scores.take(5).forEachIndexed{//index + 1 aby slo cislovanie od 1 a nie od 0
+            // Zobrazeneie TOP 5 výsledkov z lokálneho zonamu, ktorý dostaneme od funkcie fun readScores
+            scores.take(5).forEachIndexed{
                 index, (score, date) ->
                 Row(
                     modifier = Modifier.fillMaxWidth()
@@ -60,6 +73,7 @@ fun ScoreBoardScreen(navController: NavController){
                         verticalAlignment = Alignment.CenterVertically,
                     horizontalArrangement = Arrangement.Center
                 ){
+                    // Ikonky trofeji(hviezdičiek) prvé tri miesta v príslušnej farbe zlatá, strieborná, bronzová
                     if (index == 0){
                         Icon(
                             imageVector = Icons.Default.Star,
@@ -87,13 +101,16 @@ fun ScoreBoardScreen(navController: NavController){
                                 .padding(end = 8.dp)
                         )
                     }
+                    // Výpis poradia 1., 2., 3.
                     Text(
-                        text = String.format("%2d.", index +1),
+                        // Locale.ROOT pre konzistenciu vypisu, stale s . bez ohľadu na jazyk androidu
+                        text = String.format(Locale.ROOT,"%2d.", index +1),
                         modifier = Modifier.width(32.dp),
                         style = MaterialTheme.typography.bodyLarge,
                         fontSize = 24.sp,
                     )
                     Spacer(modifier = Modifier.height(8.dp))
+                    // Výpis skóre v percentách a dátumu
                     Text(
                         text = "$score% - $date",
                         style = MaterialTheme.typography.bodyLarge,
@@ -102,7 +119,7 @@ fun ScoreBoardScreen(navController: NavController){
                 }
             }
             Spacer(modifier = Modifier.height(32.dp))
-
+            // Tlačidlo pre návrat na hlavnú obrazovku
             Button(
                 onClick = { navController.navigate("home") },
                 colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFFF5722)),
@@ -123,11 +140,28 @@ fun ScoreBoardScreen(navController: NavController){
         }
     }
 }
+
+/**
+ * Načíta skóre používateľa zo súboru a vracia ich ako zoradený zoznam párov
+ *
+ * skóre - dátum (Zoradené zostupne(od najväčšieho))
+ *
+ * @param context Kontext aplikácie (potrebný pre prístup k internému úložisku).
+ * @return List<Pair<Double, String>> Zoznam párov (skóre, dátum) reprezentujúcich uložené výsledky,
+ *         zoradený zostupne podľa skóre (najvyššie ako prvé).
+ *         Napr. Pair(85.0, "2025-06-06").
+ *         Zdroje:
+ *         https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.io/read-lines.html
+ *         https://developer.android.com/training/data-storage/app-specific
+ *         https://ajaydeepak.medium.com/kotlin-string-split-trim-substring-fad3bbb37649
+ */
+
 fun readScores(context: Context): List<Pair<Double, String>> {
     val filename = "scores.txt"
     val file = File(context.filesDir, filename)
-
+    // Ak súbor neexistuje vrátime hneď prázdny zoznam
     if (!file.exists()) return emptyList()
+    // Spracovanie riadkov, rozdelenie na skóre a dátum a zoradenie
     return file.readLines()
         .mapNotNull {
         val substrs = it.split(";")

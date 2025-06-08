@@ -1,4 +1,4 @@
-[{"_comment": "zdroj otazok openSource"},
+[{"_comment": "zdroj otazok openSource: https://github.com/uberspot/OpenTriviaQA/tree/master/categories, prelozene pomocou https://www.deepl.com/cs/translator"},
   {
     "text" : "Ktoré mesto je hlavné mesto Slovenska?",
     "answers" : ["Košice","Bratislava","Prešov","Nitra"],
@@ -30,7 +30,7 @@
     "correctIndex" : 3
   },
   {
-    "text": "Zástupcovia troch z týchto druhov produkujú vlastný jed. Ktorý druh je nespárny?",
+    "text": "Zástupcovia troch z týchto druhov produkujú vlastný jed. Ktorý druh je nesprávny?",
     "answers": ["Jašterice", "Škorpióny", "Žaby", "Komáre"],
     "correctIndex": 3
   },

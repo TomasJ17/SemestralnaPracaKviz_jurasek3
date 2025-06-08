@@ -28,10 +28,23 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 
+/**
+ * ResultScreen - zobrazuje výsledné skóre kvízu po jeho skončení
+ * Formát skóre je v štýle správne odpovede/ celkový počet otázok
+ * Používateľ má možnosť vrátiť sa späť na domovskú obrazovku, alebo si zobraziť rebríček jeho TOP skóre
+ * */
+
+
+/**
+ * @param navController Navigation controller pre návrat späť alebo zobrazenie ScoreBoard.
+ * @param score Počet správnych odpovedí, ktoré používateľ získal.
+ * @param countOfQuestions Celkový počet otázok v danom kvíze.
+ * */
 @Composable
 fun ResultScreen(navController: NavController, score: Int, countOfQuestions: Int){
-    //pocet otazok podla obtiaznosti
-    val total = countOfQuestions;
+    // Počet otázok v kvíze na základe obtiažnosti
+    val total = countOfQuestions
+    // Surface ako pozadie celej obrazovky
     Surface(modifier = Modifier.fillMaxSize(), color = Color(0xFFAEA9B4)) {
         Column (
             modifier = Modifier
@@ -40,6 +53,7 @@ fun ResultScreen(navController: NavController, score: Int, countOfQuestions: Int
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ){
+            // Nadpis
             Text(
                 stringResource(R.string.result),
                 style = MaterialTheme.typography.headlineLarge,
@@ -47,14 +61,16 @@ fun ResultScreen(navController: NavController, score: Int, countOfQuestions: Int
                 color = Color.Black
             )
             Spacer(modifier = Modifier.height(24.dp))
+            // Text ako skóre vo formáte Správne odpovede: X/Y
             Text(
                 stringResource(R.string.correct_answers,score,total),
                 style = MaterialTheme.typography.titleLarge)
+
             Spacer(modifier = Modifier.height(40.dp))
 
-
+            // Tlačidlo pre spustenie nového kvízu
             Button(
-                onClick = { navController.navigate("quiz") },
+                onClick = { navController.navigate("difficulty") },
                 colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFFF5722)),
                 modifier = Modifier
                     .fillMaxWidth(0.6f)
@@ -71,6 +87,7 @@ fun ResultScreen(navController: NavController, score: Int, countOfQuestions: Int
 
             Spacer(modifier = Modifier.height(20.dp))
 
+            // Tlačidlo na zobrazenie skore presmerovanie na ScoreBoardScreen
             Button(
                 onClick = { navController.navigate("score") },
                 colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFFF5722)),
@@ -86,9 +103,9 @@ fun ResultScreen(navController: NavController, score: Int, countOfQuestions: Int
                     fontSize = 20.sp)
             }
 
-
             Spacer(modifier = Modifier.height(20.dp))
 
+            // Tlačidlo pre návrat na hlavnú obrazovku
             Button(
                 onClick = { navController.navigate("home") },
                 colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFFF5722)),

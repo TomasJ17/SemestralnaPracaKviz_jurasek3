@@ -26,10 +26,23 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 
+/**
+ * DifficultyScreen - obrazovka výberu obtiažnosti kvízu
+ * Obtiažnosť sa líši počtom otázok v kvíze
+ * Ľahká 5 otázok
+ * Stredná 10 otázok
+ * Ťažká 15 otázok
+ * */
+
+/**
+ * @param navController na prechod medzi obrazovkami
+ * */
 @Composable
 fun DifficultyScreen(navController: NavController){
+    // Surface ako pozadie celej obrazovky
     Surface(modifier = Modifier.fillMaxSize(),
         color = Color(0xFFAEA9B4)) {
+    // Column pre vertikalne zobrazenie komponentov v strede obrazovky
     Column(
         modifier = Modifier.fillMaxSize().padding(16.dp),
         verticalArrangement = Arrangement.Center,
@@ -39,6 +52,7 @@ fun DifficultyScreen(navController: NavController){
             , style = MaterialTheme.typography.headlineSmall)
         Spacer(modifier = Modifier.height(32.dp))
 
+        // Tlačidlo ľahká obtiažnosť
         Button(onClick = {navController.navigate("quiz/5")},
             colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFFF5722)),
             modifier = Modifier
@@ -53,6 +67,7 @@ fun DifficultyScreen(navController: NavController){
         }
         Spacer(modifier = Modifier.height(16.dp))
 
+        // Tlačidlo stredná obtiažnosť
         Button(onClick = {navController.navigate("quiz/10")},
             colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFFF5722)),
             modifier = Modifier
@@ -67,6 +82,7 @@ fun DifficultyScreen(navController: NavController){
         }
         Spacer(modifier = Modifier.height(16.dp))
 
+        // Tlačidlo ťažká obtiažnosť
         Button(onClick = {navController.navigate("quiz/15")},
             colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFFF5722)),
             modifier = Modifier
@@ -81,6 +97,7 @@ fun DifficultyScreen(navController: NavController){
         }
         Spacer(modifier = Modifier.height(16.dp))
 
+        // Tlačidlo pre návrat na HomeScren
         Button(
             onClick = { navController.navigate("home") },
             colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFFF5722)),

@@ -4,7 +4,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.List
+import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material.icons.filled.PlayArrow
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
@@ -17,12 +17,27 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 
+/**
+ * HomeScreen - domovská obrazovka pre aplikáciu
+ *
+ * Používateľovi sa tu zobrazia možnosti hrania kvízu alebo prezretia si TOP skóre
+ * Je to prvá obrazovka kde používateľ má možnosť interagovať s kvízom
+ * */
+
+// Zdroj: https://developer.android.com/develop/ui/compose/components/button
+// Základné tlačidlá a navigácia pomocou onClick
+
+/**
+ * @param navController na prechod medzi obrazovkami
+ * */
 @Composable
 fun HomeScreen(navController: NavHostController) {
+    // Surface ako pozadie celej obrazovky
     Surface(
         modifier = Modifier.fillMaxSize(),
         color = Color(0xFFAEA9B4)
     ) {
+        // Column pre vertikalne zobrazenie komponentov v strede obrazovky
         Column(
             modifier = Modifier
                 .fillMaxSize()
@@ -92,7 +107,7 @@ fun HomeScreen(navController: NavHostController) {
                     .fillMaxWidth(0.6f)
                     .height(100.dp)
             ) {
-                Icon(Icons.Default.List, contentDescription = stringResource(R.string.score),
+                Icon(Icons.Default.Menu, contentDescription = stringResource(R.string.score),
                     tint = Color.White,
                     modifier = Modifier.size(36.dp)
                     )

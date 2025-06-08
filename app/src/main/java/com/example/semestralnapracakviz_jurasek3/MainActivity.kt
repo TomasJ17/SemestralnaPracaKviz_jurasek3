@@ -9,6 +9,19 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 
+/**
+ * MainActivity - hlavná aktivita aplikácie
+ *
+ * Obsahuje Jetpack Compose Navigation a definuje všetky obrazovky aplikácie
+ * SplashScreen - úvodná obrazovka s logom a krátkou animáciou
+ * HomeScreen - základné menu aplikácie
+ * DifficultyScreen - výber obtiažnosti pre kvíz
+ * QuizScreen - samotný kvíz a zobrazovanie otázok
+ * ResultScreen - vyhodnotenie výsledku kvízu
+ * ScoreBoardScreen - zoznam najlepších výsledkov
+ *
+ * Táto trieda prepája celú  aplikáciu, pomocou navControllera
+ * */
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
